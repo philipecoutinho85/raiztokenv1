@@ -1,6 +1,8 @@
 [build]
-  command = "rm -rf $NETLIFY_CACHE_DIR/corepack; corepack enable && pnpm install --force && pnpm build"
+  command = "pnpm run build"
+  publish = "dist" # ou "build" dependendo do seu projeto
 
 [build.environment]
-  PNPM_VERSION = "10.12.1"
-  COREPACK_DISABLE_CACHE = "1" 
+  NODE_VERSION = "18.20.8"
+  NPM_FLAGS = "--version"
+  PNPM_VERSION = "10.4.1"

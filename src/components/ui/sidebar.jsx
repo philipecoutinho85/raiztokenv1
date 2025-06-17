@@ -1,10 +1,9 @@
 "use client";
 import { createContext, useContext, useState } from "react";
 
-// ✅ Criação do contexto
+// ✅ CONTEXTO DO SIDEBAR
 const SidebarContext = createContext();
 
-// ✅ Provider que você precisa
 export const SidebarProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(true);
 
@@ -17,10 +16,9 @@ export const SidebarProvider = ({ children }) => {
   );
 };
 
-// ✅ Hook opcional para usar o contexto no app
 export const useSidebar = () => useContext(SidebarContext);
 
-// ✅ Componentes visuais do Sidebar (Exemplo simples)
+// ✅ COMPONENTES VISUAIS DO SIDEBAR
 export const Sidebar = ({ children }) => (
   <aside className="sidebar">{children}</aside>
 );
@@ -61,7 +59,7 @@ export const SidebarFooter = ({ children }) => (
   <div className="sidebar-footer">{children}</div>
 );
 
-// ✅ Exportação de todos os componentes
+// ✅ EXPORTAÇÃO ÚNICA, SEM CONFLITO
 export {
   Sidebar,
   SidebarHeader,
@@ -73,5 +71,6 @@ export {
   SidebarGroupLabel,
   SidebarGroupContent,
   SidebarFooter,
-  SidebarProvider, // 🔥 Aqui é onde estava faltando
+  SidebarProvider,
+  useSidebar,
 };

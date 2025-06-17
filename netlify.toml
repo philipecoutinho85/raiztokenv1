@@ -1,6 +1,6 @@
 [build]
-  command = "rm -rf node_modules && corepack enable && pnpm install --force && pnpm build"
+  command = "rm -rf $NETLIFY_CACHE_DIR/corepack; corepack enable && pnpm install --force && pnpm build"
 
 [build.environment]
   PNPM_VERSION = "10.12.1"
-  COREPACK_PREPARES_MAX_ATTEMPTS = "3" # Reinícios automáticos
+  COREPACK_DISABLE_CACHE = "1" 

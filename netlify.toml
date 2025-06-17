@@ -1,8 +1,7 @@
 [build]
   command = "pnpm run build"
-  publish = "dist" # ou "build" dependendo do seu projeto
+  publish = "dist" # ✅ Altere para "build" se for o seu diretório de saída
 
 [build.environment]
   NODE_VERSION = "18.20.8"
-  NPM_FLAGS = "--version"
   PNPM_VERSION = "10.4.1"
